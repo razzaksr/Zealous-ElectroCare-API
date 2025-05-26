@@ -17,7 +17,7 @@ POST {{base}}/api/auth/login
 Content-Type: application/json
 
 {
-    "username":"rasheedha",
+    "username":"razak",
     "password":"mohamed"
 }
 ###
@@ -90,7 +90,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxN
 ###
 POST {{base}}/api/services/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM0NDEsImV4cCI6MTc0ODE1MzU0OX0.fKpIzKq3i9iUOZLGBivrHah42-iOZWKKxWP5HrksrrA
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXphayIsImlhdCI6MTc0ODIyNzAzNiwiZXhwIjoxNzQ4MjI3MTQ0fQ.s87RJKTpUsK5HKpJy-qy-_PD2W-GN9cUNQtDuk-XfVY
 
 {
     "serviceName":"Solar Installation",
