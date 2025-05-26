@@ -1,0 +1,110 @@
+@base = http://localhost:8081
+###
+POST {{base}}/api/auth/signup
+Content-Type: application/json
+
+{
+    "mobile":9363639200,
+    "username":"meharaj",
+    "fullName":"Meharaj S",
+    "role":"technician",
+    "password":"meharaj",
+    "email":"meharaj@gmail.com"
+}
+###
+###
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"rasheedha",
+    "password":"mohamed"
+}
+###
+# booking endpoints
+PUT {{base}}/api/bookings/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXNoZWVkaGEiLCJpYXQiOjE3NDgxNTQ0OTksImV4cCI6MTc0ODE1NDYwN30.gSdzMlanq4YzrrTf5KB_JsD6vZeHKTvm4awUFiYOwjw
+Content-Type: application/json
+
+{
+    "bookingId": 1,
+    "bookedBy": "rasheedha",
+    "technician": "razzaksr",
+    "scheduledDateTime": "2025-05-25T11:56:13.518343",
+    "service": 2,
+    "status": "DONE"
+}
+###
+GET {{base}}/api/bookings/by/rasheedha
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXNoZWVkaGEiLCJpYXQiOjE3NDgxNjczMjAsImV4cCI6MTc0ODE2NzQyOH0.HAYzq7JX8s8aggtU64Jf-7hQGvASr0UJjExuoml-i2g
+###
+GET {{base}}/api/bookings/
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXNoZWVkaGEiLCJpYXQiOjE3NDgxNTQzNTksImV4cCI6MTc0ODE1NDQ2N30.0Lt9edxMvjOj3L6QkEU5-9xQhECCD7vcJE4Ft509jbQ
+###
+POST {{base}}/api/bookings/conform
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXNoZWVkaGEiLCJpYXQiOjE3NDgxNTQzNTksImV4cCI6MTc0ODE1NDQ2N30.0Lt9edxMvjOj3L6QkEU5-9xQhECCD7vcJE4Ft509jbQ
+Content-Type: application/json
+
+{
+    "bookingBy":"rasheedha",
+    "service":2,
+    "latitude":11.660533652570964,
+    "longitude":78.17224232429312
+}
+###
+# electrician endpoints
+PUT {{base}}/api/technicians/rate/raqeeb/4.9
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM5MjUsImV4cCI6MTc0ODE1NDAzM30._loz-BxDFargEdHJpPotRz2zwF5uaQPaGO9QwQqE7tg
+###
+PUT {{base}}/api/technicians/status/mohamed/false
+###
+GET {{base}}/api/technicians/near/12.883433577880057/77.55405928179871
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM3NDksImV4cCI6MTc0ODE1Mzg1N30.BE25z5FzAdFrxPBUz8nCt1KtFevVQLcRdYnFJdWhgKM
+###
+GET {{base}}/api/technicians/near/11.462660805028639/78.17879683060916
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM3NDksImV4cCI6MTc0ODE1Mzg1N30.BE25z5FzAdFrxPBUz8nCt1KtFevVQLcRdYnFJdWhgKM
+###
+GET {{base}}/api/technicians/near/11.660533652570964/78.17224232429312
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM3NDksImV4cCI6MTc0ODE1Mzg1N30.BE25z5FzAdFrxPBUz8nCt1KtFevVQLcRdYnFJdWhgKM
+###
+GET {{base}}/api/technicians/
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM3NDksImV4cCI6MTc0ODE1Mzg1N30.BE25z5FzAdFrxPBUz8nCt1KtFevVQLcRdYnFJdWhgKM
+###
+POST {{base}}/api/technicians/
+Content-Type: application/json
+
+{
+    "username":"mohamed",
+    "latitude":11.462517631069861, 
+    "longitude":78.24730928717594
+}
+
+
+###
+# service endpoint calling
+GET {{base}}/api/services/
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXNoZWVkaGEiLCJpYXQiOjE3NDgxNjgyMDUsImV4cCI6MTc0ODE2ODMxM30.ujV28E-IEZg0B3Z5RAWR0vlqzUx-13KsgyfBbAcZ75s
+###
+GET {{base}}/api/services/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTMyNzgsImV4cCI6MTc0ODE1MzM4Nn0.EBJSzYOJUNN8sayyiq2t3Xw6f6TYPWdveNfQNDAi_nQ
+###
+POST {{base}}/api/services/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM0NDEsImV4cCI6MTc0ODE1MzU0OX0.fKpIzKq3i9iUOZLGBivrHah42-iOZWKKxWP5HrksrrA
+
+{
+    "serviceName":"Solar Installation",
+    "price":3500
+}
+###
+PUT {{base}}/api/services/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM1MDUsImV4cCI6MTc0ODE1MzYxM30.2Tlv3ZomrbFUeeICJAgiaBOJDcf9H-Z-WsB6IGVwI0Q
+
+{
+    "serviceId":6,
+    "serviceName":"Solar Installation",
+    "price":3800
+}
+###
+DELETE {{base}}/api/services/8

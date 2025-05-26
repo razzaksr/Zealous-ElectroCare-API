@@ -1,0 +1,131 @@
+@base = http://localhost:8081
+# invoice
+
+GET {{base}}/api/invoices/18
+
+###
+
+# booking endpoint calling
+PUT {{base}}/api/bookings/update
+Content-Type: application/json
+
+{
+    "bookingId": 3,
+    "bookedBy": "rasheedha",
+    "technician": "raqeeb",
+    "scheduledDateTime": "2025-05-24T00:17:48.889391",
+    "service": 2,
+    "status": "DONE"
+}
+###
+GET {{base}}/api/bookings/by/razzaksr
+###
+GET {{base}}/api/bookings/
+###
+# POST {{base}}/api/bookings/confirm/razzaksr/2025-03-09T14:00:00/3
+# POST {{base}}/api/bookings/conform/razzaksr/3
+POST {{base}}/api/bookings/conform
+Content-Type: application/json
+
+{
+    "bookingBy":"rasheedha",
+    "service":2,
+    "latitude":11.660533652570964,
+    "longitude":78.17224232429312
+}
+###
+
+
+# technicians endpoint calling
+PUT {{base}}/api/technicians/rate/mohamed/3.7
+###
+PUT {{base}}/api/technicians/status/mohamed/false
+###
+GET {{base}}/api/technicians/near/12.883433577880057/77.55405928179871
+###
+GET {{base}}/api/technicians/near/11.462660805028639/78.17879683060916
+###
+GET {{base}}/api/technicians/near/11.660533652570964/78.17224232429312
+###
+GET {{base}}/api/technicians/
+###
+POST {{base}}/api/technicians/
+Content-Type: application/json
+
+{
+    "username":"mohamed",
+    "latitude":11.462517631069861, 
+    "longitude":78.24730928717594
+}
+
+# user endpoints calling
+###
+PUT {{base}}/api/users/
+Content-Type: application/json
+
+{
+    "mobile":9677520691,
+    "username":"raqeeb",
+    "fullName":"Raqeeb R",
+    "role":"technician",
+    "password":"mohamed",
+    "email":"raqeeb@gmail.com"
+}
+###
+GET {{base}}/api/users/
+###
+GET {{base}}/api/users/role/technician
+###
+GET {{base}}/api/users/role/customer
+###
+POST {{base}}/api/users/
+Content-Type: application/json
+
+{
+    "mobile":9677520692,
+    "username":"raqeeb",
+    "fullName":"Raqeeb R",
+    "role":"technician",
+    "password":"mohamed",
+    "email":"raqeeb@gmail.com"
+}
+
+# POST {{base}}/api/users/
+# Content-Type: application/json
+
+# {
+#     "mobile":9597334782,
+#     "username":"mohamed",
+#     "fullName":"Mohamed",
+#     "role":"technician",
+#     "latitude":11.45,
+#     "longitude":78.20,
+#     "password":"mohamed",
+#     "email":"mohamed@gmail.com"
+# }
+###
+
+
+# service endpoint calling
+GET {{base}}/api/services/
+###
+GET {{base}}/api/services/3
+###
+POST {{base}}/api/services/
+Content-Type: application/json
+
+{
+    "serviceName":"Basic Installation",
+    "price":750
+}
+###
+PUT {{base}}/api/services/
+Content-Type: application/json
+
+{
+    "serviceId":3,
+    "serviceName":"AC Wiring",
+    "price":700
+}
+###
+DELETE {{base}}/api/services/8
