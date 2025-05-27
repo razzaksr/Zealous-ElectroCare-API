@@ -1,15 +1,16 @@
-@base = http://localhost:8081
+# @base = http://localhost:8081
+@base = https://electrocare-api.duckdns.org
 ###
 POST {{base}}/api/auth/signup
 Content-Type: application/json
 
 {
-    "mobile":9363639200,
-    "username":"meharaj",
-    "fullName":"Meharaj S",
+    "mobile":8667002959,
+    "username":"raqeeb",
+    "fullName":"Raqueeb R",
     "role":"technician",
-    "password":"meharaj",
-    "email":"meharaj@gmail.com"
+    "password":"mohamed",
+    "email":"raqeeb@gmail.com"
 }
 ###
 ###
@@ -71,12 +72,13 @@ GET {{base}}/api/technicians/
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXFlZWIiLCJpYXQiOjE3NDgxNTM3NDksImV4cCI6MTc0ODE1Mzg1N30.BE25z5FzAdFrxPBUz8nCt1KtFevVQLcRdYnFJdWhgKM
 ###
 POST {{base}}/api/technicians/
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXphayIsImlhdCI6MTc0ODM0MDk3NywiZXhwIjoxNzQ4MzQxMDg1fQ.1JBfUi1WLYp2SanLZCOXFjdU0O5v0AMX7V4pH7MNuhs
 Content-Type: application/json
 
 {
-    "username":"mohamed",
-    "latitude":11.462517631069861, 
-    "longitude":78.24730928717594
+    "username":"razzaksr",
+    "latitude":11.43920505064307, 
+    "longitude":78.22444403891059
 }
 
 
