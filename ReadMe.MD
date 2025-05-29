@@ -37,9 +37,15 @@ EXPOSE 8081
 # Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
+build image
+docker build --no-cache -t razzaksr/zealous-electro-care .
 
+run container
 docker run -p 8081:8081 -e mysql_url=jdbc:mysql://URL -e mysql_user=USERNAME -e cors_origin=CROSS_ORIGIN_FRONT_END -e mysql_password=PASSWORD razzaksr/zealous-electro-care
 
+push to hub
+docker push razzaksr/zealous-electro-care:latest
 
-# .env.properties mandate when running in local
-# spring.config.import=file:.env.properties
+
+.env.properties mandate when running in local
+spring.config.import=file:.env.properties
